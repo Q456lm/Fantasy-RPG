@@ -496,15 +496,15 @@ function lavaroom(){
     else{
         if (havekid == false){
             b1.addEventListener('click', lavapath)
-            b2.addEventListener('click', shart)
+            b2.addEventListener('click', lavaroom)
             b3.addEventListener('click', lavaroom)
-            b4.addEventListener('click', lavaroom)
+            b4.addEventListener('click', shart)
         }
         else{
             b1.addEventListener('click', ending2)
-            b2.addEventListener('click', shart)
+            b2.addEventListener('click', lavaroom)
             b3.addEventListener('click', lavaroom)
-            b4.addEventListener('click', lavaroom)
+            b4.addEventListener('click', shart)
         }
     }
     event.preventDefault()
