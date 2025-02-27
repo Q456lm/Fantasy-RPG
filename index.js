@@ -15,6 +15,18 @@ let havebow = false
 let defeatsuperman = false
 let havekid = false
 let beatdragon = false
+let havevaria = false
+let haveshield = false
+let defeatbowser = false
+
+function sleep(milliseconds) { //Stolen from https://stackoverflow.com/questions/16873323/javascript-sleep-wait-before-continuing
+    var start = new Date().getTime();
+    for (var i = 0; i < 1; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
 
 function restart(){
     b1.removeEventListener('click', start)
@@ -85,6 +97,22 @@ function restart(){
     b2.removeEventListener('click', supermanroom)
     b3.removeEventListener('click', supermanroom)
     b4.removeEventListener('click', supermanroom)
+    b1.removeEventListener('click', bowserroom)
+    b2.removeEventListener('click', bowserroom)
+    b3.removeEventListener('click', bowserroom)
+    b4.removeEventListener('click', bowserroom)
+    b1.removeEventListener('click', bowserfight)
+    b2.removeEventListener('click', bowserfight)
+    b3.removeEventListener('click', bowserfight)
+    b4.removeEventListener('click', bowserfight)
+    b1.removeEventListener('click', bowserwin)
+    b2.removeEventListener('click', bowserwin)
+    b3.removeEventListener('click', bowserwin)
+    b4.removeEventListener('click', bowserwin)
+    b1.removeEventListener('click', rightbowser)
+    b2.removeEventListener('click', rightbowser)
+    b3.removeEventListener('click', rightbowser)
+    b4.removeEventListener('click', rightbowser)
     b1.removeEventListener('click', superfight)
     b2.removeEventListener('click', superfight)
     b3.removeEventListener('click', superfight)
@@ -97,10 +125,122 @@ function restart(){
     b2.removeEventListener('click', kidtime)
     b3.removeEventListener('click', kidtime)
     b4.removeEventListener('click', kidtime)
+    b1.removeEventListener('click', dragonroom)
+    b2.removeEventListener('click', dragonroom)
+    b3.removeEventListener('click', dragonroom)
+    b4.removeEventListener('click', dragonroom)
+    b1.removeEventListener('click', wizardroom)
+    b2.removeEventListener('click', wizardroom)
+    b3.removeEventListener('click', wizardroom)
+    b4.removeEventListener('click', wizardroom)
+    b1.removeEventListener('click', wizardfight)
+    b2.removeEventListener('click', wizardfight)
+    b3.removeEventListener('click', wizardfight)
+    b4.removeEventListener('click', wizardfight)
+    b1.removeEventListener('click', variaroom)
+    b2.removeEventListener('click', variaroom)
+    b3.removeEventListener('click', variaroom)
+    b4.removeEventListener('click', variaroom)
+    b1.removeEventListener('click', variatime)
+    b2.removeEventListener('click', variatime)
+    b3.removeEventListener('click', variatime)
+    b4.removeEventListener('click', variatime)
+    b1.removeEventListener('click', holeroom1)
+    b2.removeEventListener('click', holeroom1)
+    b3.removeEventListener('click', holeroom1)
+    b4.removeEventListener('click', holeroom1)
+    b1.removeEventListener('click', holeroom2)
+    b2.removeEventListener('click', holeroom2)
+    b3.removeEventListener('click', holeroom2)
+    b4.removeEventListener('click', holeroom2)
+    b1.removeEventListener('click', holeroom3)
+    b2.removeEventListener('click', holeroom3)
+    b3.removeEventListener('click', holeroom3)
+    b4.removeEventListener('click', holeroom3)
+    b1.removeEventListener('click', holeroom4)
+    b2.removeEventListener('click', holeroom4)
+    b3.removeEventListener('click', holeroom4)
+    b4.removeEventListener('click', holeroom4)
+    b1.removeEventListener('click', holeroom5)
+    b2.removeEventListener('click', holeroom5)
+    b3.removeEventListener('click', holeroom5)
+    b4.removeEventListener('click', holeroom5)
+    b1.removeEventListener('click', holeroom6)
+    b2.removeEventListener('click', holeroom6)
+    b3.removeEventListener('click', holeroom6)
+    b4.removeEventListener('click', holeroom6)
+    b1.removeEventListener('click', holeroom7)
+    b2.removeEventListener('click', holeroom7)
+    b3.removeEventListener('click', holeroom7)
+    b4.removeEventListener('click', holeroom7)
+    b1.removeEventListener('click', holeroom8)
+    b2.removeEventListener('click', holeroom8)
+    b3.removeEventListener('click', holeroom8)
+    b4.removeEventListener('click', holeroom8)
+    b1.removeEventListener('click', ending2)
+    b2.removeEventListener('click', ending2)
+    b3.removeEventListener('click', ending2)
+    b4.removeEventListener('click', ending2)
+    b1.removeEventListener('click', ending3)
+    b2.removeEventListener('click', ending3)
+    b3.removeEventListener('click', ending3)
+    b4.removeEventListener('click', ending3)
+    b1.removeEventListener('click', ending4)
+    b2.removeEventListener('click', ending4)
+    b3.removeEventListener('click', ending4)
+    b4.removeEventListener('click', ending4)
+    b1.removeEventListener('click', ending5)
+    b2.removeEventListener('click', ending5)
+    b3.removeEventListener('click', ending5)
+    b4.removeEventListener('click', ending5)
+    b1.removeEventListener('click', ending6)
+    b2.removeEventListener('click', ending6)
+    b3.removeEventListener('click', ending6)
+    b4.removeEventListener('click', ending6)
+    b1.removeEventListener('click', ending7)
+    b2.removeEventListener('click', ending7)
+    b3.removeEventListener('click', ending7)
+    b4.removeEventListener('click', ending7)
+    b1.removeEventListener('click', rightchoice)
+    b2.removeEventListener('click', rightchoice)
+    b3.removeEventListener('click', rightchoice)
+    b4.removeEventListener('click', rightchoice)
+    b1.removeEventListener('click', upchoice)
+    b2.removeEventListener('click', upchoice)
+    b3.removeEventListener('click', upchoice)
+    b4.removeEventListener('click', upchoice)
+    b1.removeEventListener('click', lavapath)
+    b2.removeEventListener('click', lavapath)
+    b3.removeEventListener('click', lavapath)
+    b4.removeEventListener('click', lavapath)
+    b1.removeEventListener('click', shieldroom)
+    b2.removeEventListener('click', shieldroom)
+    b3.removeEventListener('click', shieldroom)
+    b4.removeEventListener('click', shieldroom)
+    b1.removeEventListener('click', shieldtime)
+    b2.removeEventListener('click', shieldtime)
+    b3.removeEventListener('click', shieldtime)
+    b4.removeEventListener('click', shieldtime)
+    b1.removeEventListener('click', dragonfight)
+    b2.removeEventListener('click', dragonfight)
+    b3.removeEventListener('click', dragonfight)
+    b4.removeEventListener('click', dragonfight)
+    b1.removeEventListener('click', antigardnerscene)
+    b2.removeEventListener('click', antigardnerscene)
+    b3.removeEventListener('click', antigardnerscene)
+    b4.removeEventListener('click', antigardnerscene)
     b1.removeEventListener('click', die)
     b2.removeEventListener('click', die)
     b3.removeEventListener('click', die)
     b4.removeEventListener('click', die)
+    b1.removeEventListener('click', antireveal)
+    b2.removeEventListener('click', antireveal)
+    b3.removeEventListener('click', antireveal)
+    b4.removeEventListener('click', antireveal)
+    b1.removeEventListener('click', networkexam)
+    b2.removeEventListener('click', networkexam)
+    b3.removeEventListener('click', networkexam)
+    b4.removeEventListener('click', networkexam)
 }
 
 function shart(){
@@ -136,19 +276,131 @@ function die(){
     event.preventDefault()
 }
 
+function ending2(){
+    text1.innerHTML = "Ending 2: You survived due to Varia Suit but the all of the children died."
+    img1.src = "Kid Lava.png"
+    button1.innerHTML = "restart"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    console.log("You are ded")
+    restart()
+    b1.addEventListener('click', start)
+    b2.addEventListener('click', die)
+    b3.addEventListener('click', die)
+    b4.addEventListener('click', die)
+    event.preventDefault()
+}
+
+function ending3(){
+    text1.innerHTML = "Ending 3: You found an exit, but you did not save the children nor find out who the kidnapper is."
+    img1.src = "Ending3.png"
+    button1.innerHTML = "restart"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    console.log("You are at Ending 3")
+    restart()
+    b1.addEventListener('click', start)
+    b2.addEventListener('click', die)
+    b3.addEventListener('click', die)
+    b4.addEventListener('click', die)
+    event.preventDefault()
+}
+
+function ending4(){
+    text1.innerHTML = "Ending 4: You failed, Mr.Anti-Gardner took over your classroom"
+    img1.src = "Ending4.png"
+    button1.innerHTML = "restart"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    console.log("You are at Ending 4")
+    restart()
+    b1.addEventListener('click', start)
+    b2.addEventListener('click', die)
+    b3.addEventListener('click', die)
+    b4.addEventListener('click', die)
+    event.preventDefault()
+}
+
+function ending5(){
+    text1.innerHTML = "Ending 5: You passed, You teach Mr.Anti-Gardner networking as he cries and screams."
+    img1.src = "Ending5.png"
+    button1.innerHTML = "restart"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    console.log("You are at Ending 5")
+    restart()
+    b1.addEventListener('click', start)
+    b2.addEventListener('click', die)
+    b3.addEventListener('click', die)
+    b4.addEventListener('click', die)
+    event.preventDefault()
+}
+
+function ending6(){
+    text1.innerHTML = "Ending 6: You entered some kind of classroom, Ms. Williams is there, you are forced to do her personal networking course"
+    img1.src = "Ending 6.png"
+    button1.innerHTML = "restart"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    console.log("You are at Ending 6")
+    restart()
+    b1.addEventListener('click', start)
+    b2.addEventListener('click', die)
+    b3.addEventListener('click', die)
+    b4.addEventListener('click', die)
+    event.preventDefault()
+}
+
+function ending7(){
+    text1.innerHTML = "Ending 7: You entered some kind of classroom, Ms. Williams is there, she gave you and all the kids a study guide for her next exam."
+    img1.src = "Ending 7.png"
+    button1.innerHTML = "restart"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    console.log("You are at Ending 7")
+    restart()
+    b1.addEventListener('click', start)
+    b2.addEventListener('click', die)
+    b3.addEventListener('click', die)
+    b4.addEventListener('click', die)
+    event.preventDefault()
+}
+
 function lavaroom(){
     img1.src = "Lava Room.png"
     text1.innerHTML = "You entered the lava room and it's really hot."
-    button1.innerHTML = "Go Back"
-    button2.innerHTML = "Try to go through"
+    button1.innerHTML = "Try to go through"
+    button2.innerHTML = "Go Back"
     button3.innerHTML = ""
     button4.innerHTML = ""
     console.log("You are in the lava room")
     restart()
-    b1.addEventListener('click', shart)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', lavaroom)
-    b4.addEventListener('click', lavaroom)
+    if (havevaria == false){
+        b1.addEventListener('click', die)
+        b2.addEventListener('click', shart)
+        b3.addEventListener('click', lavaroom)
+        b4.addEventListener('click', lavaroom)
+    }
+    else{
+        if (havekid == false){
+            b1.addEventListener('click', lavapath)
+            b2.addEventListener('click', shart)
+            b3.addEventListener('click', lavaroom)
+            b4.addEventListener('click', lavaroom)
+        }
+        else{
+            b1.addEventListener('click', ending2)
+            b2.addEventListener('click', shart)
+            b3.addEventListener('click', lavaroom)
+            b4.addEventListener('click', lavaroom)
+        }
+    }
     event.preventDefault()
 }
 
@@ -188,16 +440,48 @@ function bowroom(){
     if (havebow == false){
         img1.src = "Bow Room.png"
         text1.innerHTML = "You found a bow"
+        button1.innerHTML = "Go Back"
+        button2.innerHTML = ""
+        button3.innerHTML = ""
+        button4.innerHTML = "Pick it up"
+        console.log("You are in the sword room")
+        restart()
+        b1.addEventListener('click', downchoice)
+        b2.addEventListener('click', bowroom)
+        b3.addEventListener('click', bowroom)
+        b4.addEventListener('click', bowtime)
+    }
+    else{
+        img1.src = "Empty Sword Room.png"
+        text1.innerHTML = "There is nothing here."
+        button1.innerHTML = "Go Back"
+        button2.innerHTML = ""
+        button3.innerHTML = ""
+        button4.innerHTML = ""
+        console.log("You returned the bow room")
+        restart()
+        b1.addEventListener('click', downchoice)
+        b2.addEventListener('click', bowroom)
+        b3.addEventListener('click', bowroom)
+        b4.addEventListener('click', bowroom)
+    }
+    event.preventDefault()
+}
+
+function shieldroom(){
+    if (haveshield == false){
+        img1.src = "Shield Room.png"
+        text1.innerHTML = "You found a shield"
         button1.innerHTML = "Pick it up"
         button2.innerHTML = ""
         button3.innerHTML = ""
         button4.innerHTML = "Go Back"
-        console.log("You are in the sword room")
+        console.log("You are in the shield room")
         restart()
-        b1.addEventListener('click', bowtime)
-        b2.addEventListener('click', bowroom)
-        b3.addEventListener('click', bowroom)
-        b4.addEventListener('click', downchoice)
+        b1.addEventListener('click', shieldtime)
+        b2.addEventListener('click', shieldroom)
+        b3.addEventListener('click', shieldroom)
+        b4.addEventListener('click', upchoice)
     }
     else{
         img1.src = "Empty Sword Room.png"
@@ -206,12 +490,12 @@ function bowroom(){
         button2.innerHTML = ""
         button3.innerHTML = ""
         button4.innerHTML = "Go Back"
-        console.log("You returned the bow room")
+        console.log("You returned the shield room")
         restart()
-        b1.addEventListener('click', bowroom)
-        b2.addEventListener('click', bowroom)
-        b3.addEventListener('click', bowroom)
-        b4.addEventListener('click', downchoice)
+        b1.addEventListener('click', shieldroom)
+        b2.addEventListener('click', shieldroom)
+        b3.addEventListener('click', shieldroom)
+        b4.addEventListener('click', upchoice)
     }
     event.preventDefault()
 }
@@ -251,7 +535,7 @@ function monsterroom(){
         restart()
         b1.addEventListener('click', monsterroom)
         b2.addEventListener('click', shart)
-        b3.addEventListener('click', die)
+        b3.addEventListener('click', rightchoice)
         b4.addEventListener('click', monsterroom)
     }
     event.preventDefault()
@@ -431,14 +715,15 @@ function kidroom(){
 }
 
 function dragonroom(){
-    if (beatdragon == true){
+    if (beatdragon == false){
         img1.src = "Dragon Room.png"
         text1.innerHTML = "You enocuntered THE DRAGON"
         button1.innerHTML = ""
         button2.innerHTML = "Go Back"
         button3.innerHTML = "Try to Fight"
         button4.innerHTML = ""
-        if (havebow = false){
+        restart()
+        if (havebow == false){
             b1.addEventListener('click', dragonroom)
             b2.addEventListener('click', rightchoice)
             b3.addEventListener('click', die)
@@ -458,6 +743,7 @@ function dragonroom(){
         button2.innerHTML = "Go Back"
         button3.innerHTML = "Go Foward"
         button4.innerHTML = ""
+        restart()
         b1.addEventListener('click', dragonroom)
         b2.addEventListener('click', rightchoice)
         b3.addEventListener('click', variaroom)
@@ -466,12 +752,338 @@ function dragonroom(){
     event.preventDefault()
 }
 
+function variaroom(){
+    if (havevaria == false){
+        img1.src = "Varia Room.png"
+        text1.innerHTML = "You found the varia suit"
+        console.log("You entered the varia room")
+        restart()
+        button1.innerHTML = "Take It"
+        button2.innerHTML = "Go Back"
+        button3.innerHTML = ""
+        button4.innerHTML = ""
+        b1.addEventListener('click', variatime)
+        b2.addEventListener('click', dragonroom)
+        b3.addEventListener('click', variaroom)
+        b4.addEventListener('click', variaroom)
+    }
+    else{
+        img1.src = "Re Varia Room.png"
+        text1.innerHTML = "You found a hidden tunnel"
+        console.log("You entered the varia room again")
+        restart()
+        button1.innerHTML = ""
+        button2.innerHTML = "Go Back"
+        button3.innerHTML = ""
+        button4.innerHTML = "Go Down"
+        b1.addEventListener('click', variaroom)
+        b2.addEventListener('click', dragonroom)
+        b3.addEventListener('click', variaroom)
+        b4.addEventListener('click', holeroom1)
+    }
+    event.preventDefault()
+}
+
+function lavapath(){
+    img1.src = "Survive Lava.png"
+    text1.innerHTML = "You were able to survive the lava due to the Varia Suit"
+    console.log("You are in lavapath")
+    button1.innerHTML = "Go Forward"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = "Go Back"
+    restart()
+    b1.addEventListener('click', upchoice)
+    b2.addEventListener('click', lavapath)
+    b3.addEventListener('click', lavapath)
+    b4.addEventListener('click', lavaroom)
+    event.preventDefault()
+}
+
+function holeroom1(){
+    
+    img1.src = "Hole Room Start.png"
+    text1.innerHTML = "Seems to be the start of some kind of maze"
+    console.log("You entered the hole puzzle")
+    button1.innerHTML = "Go Back"
+    button2.innerHTML = ""
+    button3.innerHTML = "Start Puzzle"
+    button4.innerHTML = ""
+    restart()
+    b1.addEventListener('click', variaroom)
+    b2.addEventListener('click', holeroom1)
+    b3.addEventListener('click', holeroom2)
+    b4.addEventListener('click', holeroom1)
+    event.preventDefault()
+}
+
+function holeroom2(){
+    
+    img1.src = "Hole Room.png"
+    text1.innerHTML = "Where to?"
+    console.log("You entered the start of the hole puzzle")
+    button1.innerHTML = "North"
+    button2.innerHTML = "West"
+    button3.innerHTML = "East"
+    button4.innerHTML = "South"
+    restart()
+    b1.addEventListener('click', holeroom1)
+    b2.addEventListener('click', holeroom1)
+    b3.addEventListener('click', holeroom3)
+    b4.addEventListener('click', holeroom1)
+    event.preventDefault()
+}
+
+function holeroom3(){
+    
+    img1.src = "Hole Room.png"
+    text1.innerHTML = "Where to?"
+    console.log("You entered the start of the hole puzzle")
+    button1.innerHTML = "North"
+    button2.innerHTML = "West"
+    button3.innerHTML = "East"
+    button4.innerHTML = "South"
+    restart()
+    b1.addEventListener('click', holeroom4)
+    b2.addEventListener('click', holeroom1)
+    b3.addEventListener('click', holeroom1)
+    b4.addEventListener('click', holeroom1)
+    event.preventDefault()
+}
+
+function holeroom4(){
+    
+    img1.src = "Hole Room.png"
+    text1.innerHTML = "Where to?"
+    console.log("You entered the start of the hole puzzle")
+    button1.innerHTML = "North"
+    button2.innerHTML = "West"
+    button3.innerHTML = "East"
+    button4.innerHTML = "South"
+    restart()
+    b1.addEventListener('click', holeroom1)
+    b2.addEventListener('click', holeroom5)
+    b3.addEventListener('click', holeroom1)
+    b4.addEventListener('click', holeroom1)
+    event.preventDefault()
+}
+
+function holeroom5(){
+    
+    img1.src = "Hole Room.png"
+    text1.innerHTML = "Where to?"
+    console.log("You entered the start of the hole puzzle")
+    button1.innerHTML = "North"
+    button2.innerHTML = "West"
+    button3.innerHTML = "East"
+    button4.innerHTML = "South"
+    restart()
+    b1.addEventListener('click', holeroom1)
+    b2.addEventListener('click', holeroom6)
+    b3.addEventListener('click', holeroom1)
+    b4.addEventListener('click', holeroom1)
+    event.preventDefault()
+}
+
+function holeroom6(){
+    
+    img1.src = "Hole Room.png"
+    text1.innerHTML = "Where to?"
+    console.log("You entered the start of the hole puzzle")
+    button1.innerHTML = "North"
+    button2.innerHTML = "West"
+    button3.innerHTML = "East"
+    button4.innerHTML = "South"
+    restart()
+    b1.addEventListener('click', holeroom1)
+    b2.addEventListener('click', holeroom1)
+    b3.addEventListener('click', holeroom1)
+    b4.addEventListener('click', holeroom7)
+    event.preventDefault()
+}
+
+function holeroom7(){
+    
+    img1.src = "Hole Room.png"
+    text1.innerHTML = "Where to?"
+    console.log("You entered the start of the hole puzzle")
+    button1.innerHTML = "North"
+    button2.innerHTML = "West"
+    button3.innerHTML = "East"
+    button4.innerHTML = "South"
+    restart()
+    b1.addEventListener('click', holeroom1)
+    b2.addEventListener('click', holeroom1)
+    b3.addEventListener('click', holeroom8)
+    b4.addEventListener('click', holeroom1)
+    event.preventDefault()
+}
+
+function holeroom8(){
+    
+    img1.src = "Hole Room Final.png"
+    text1.innerHTML = "There is a computer describing Ganondorf's evil plan to seize the Island of Koridai"
+    console.log("There is a computer describing Ganondorf's evil plan to seize the Island of Koridai")
+    button1.innerHTML = "Go Back"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    restart()
+    b1.addEventListener('click', holeroom1)
+    b2.addEventListener('click', holeroom8)
+    b3.addEventListener('click', holeroom8)
+    b4.addEventListener('click', holeroom8)
+    event.preventDefault()
+}
+
+function wizardroom(){
+    img1.src = "Wizard Fight.png"
+    text1.innerHTML = "You encounted the Mysterious Kindnapper, he has locked your path back."
+    console.log("You entered the Wizard Room ")
+    button1.innerHTML = ""
+    button2.innerHTML = "Fight"
+    button3.innerHTML = "Negotitate"
+    button4.innerHTML = ""
+    restart()
+    b1.addEventListener('click', wizardroom)
+    b2.addEventListener('click', wizardfight)
+    b3.addEventListener('click', antigardnerscene)
+    b4.addEventListener('click', wizardroom)
+    event.preventDefault()
+}
+
 function bowserroom(){
-    console.log("I swear guys, I am not evil")
+    if (defeatbowser == false){
+        img1.src = "Bowser Room_.png"
+        text1.innerHTML = "You encounted Bowser, maybe he is guarding an exit."
+        console.log("You entered Bowser")
+        button1.innerHTML = ""
+        button2.innerHTML = "Go Back"
+        button3.innerHTML = "Fight"
+        button4.innerHTML = ""
+        restart()
+        if (haveshield == false){
+            b1.addEventListener('click', bowserroom)
+            b2.addEventListener('click', rightchoice)
+            b3.addEventListener('click', die)
+            b4.addEventListener('click', bowserroom)
+        }
+        else{
+            b1.addEventListener('click', bowserroom)
+            b2.addEventListener('click', rightchoice)
+            b3.addEventListener('click', bowserfight)
+            b4.addEventListener('click', bowserroom)
+        }
+    }
+    else{
+        img1.src = "Bowser Left.png"
+        text1.innerHTML = "You can pass the lava using the Varia Suit"
+        console.log("You rentered Bowser")
+        button1.innerHTML = ""
+        button2.innerHTML = "Go Back"
+        button3.innerHTML = "Go Forward"
+        button4.innerHTML = ""
+        restart()
+        if (havekid == false){
+            b1.addEventListener('click', bowserroom)
+            b2.addEventListener('click', rightchoice)
+            b3.addEventListener('click', rightbowser)
+            b4.addEventListener('click', bowserroom)
+        }
+        else{
+            b1.addEventListener('click', bowserroom)
+            b2.addEventListener('click', rightchoice)
+            b3.addEventListener('click', ending2)
+            b4.addEventListener('click', bowserroom)
+        }
+    }
+    event.preventDefault()
+
+}
+
+function bowserfight(){
+    img1.src = "Bowser Fight_.png"
+    text1.innerHTML = "You could block Bowser's attacks with your shield now you can walk to the axe and finish him"
+    console.log("You entered Bowser Fight")
+    button1.innerHTML = ""
+    button2.innerHTML = "Go Back"
+    button3.innerHTML = "Use the axe"
+    button4.innerHTML = ""
+    restart()
+    b1.addEventListener('click', bowserfight)
+    b2.addEventListener('click', rightchoice)
+    b3.addEventListener('click', bowserwin)
+    b4.addEventListener('click', bowserfight)
+    event.preventDefault()
+}
+
+function bowserwin(){
+    defeatbowser = true
+    img1.src = "Bowser Win_.png"
+    button1.innerHTML = ""
+    button2.innerHTML = "Go Back"
+    button3.innerHTML = "Go Forward"
+    button4.innerHTML = ""
+    text1.innerHTML = "You defeated Bowser"
+    console.log("You entered Bowser Fight")
+    restart()
+    if (havekid == false){
+        b1.addEventListener('click', bowserwin)
+        b2.addEventListener('click', bowserroom)
+        b3.addEventListener('click', ending6)
+        b4.addEventListener('click', bowserwin)
+    }
+    else{
+        b1.addEventListener('click', bowserwin)
+        b2.addEventListener('click', ending2)
+        b3.addEventListener('click', ending7)
+        b4.addEventListener('click', bowserwin) 
+    }
+    event.preventDefault()
+}
+
+function rightbowser(){
+    img1.src = "Bowser Right.png"
+    button1.innerHTML = ""
+    button2.innerHTML = "Go Back"
+    button3.innerHTML = "Go Forward"
+    button4.innerHTML = ""
+    text1.innerHTML = "You can go back using the Varia Suit"
+    console.log("You entered Bowser Right")
+    restart()
+    if (havekid == false){
+        b1.addEventListener('click', rightbowser)
+        b2.addEventListener('click', bowserroom)
+        b3.addEventListener('click', ending6)
+        b4.addEventListener('click', rightbowser)
+    }
+    else{
+        b1.addEventListener('click', bowserroom)
+        b2.addEventListener('click', ending2)
+        b3.addEventListener('click', ending7)
+        b4.addEventListener('click', bowserroom)
+    }
+    event.preventDefault()
+}
+
+function upchoice(){
+    img1.src = "Upward  Split.png"
+    text1.innerHTML = "You reached a split path"
+    console.log("You entered the upward split path room")
+    restart()
+    button1.innerHTML = ""
+    button2.innerHTML = "Left"
+    button3.innerHTML = "Right"
+    button4.innerHTML = "Go Back"
+    b1.addEventListener('click', upchoice)
+    b2.addEventListener('click', shieldroom)
+    b3.addEventListener('click', wizardroom)
+    b4.addEventListener('click', lavapath)
+    event.preventDefault()
 }
 
 function rightchoice(){
-    img1.src = "Rightward Choice.png"
+    img1.src = "Rightward Split.png"
     text1.innerHTML = "You reached a split path"
     console.log("You entered the rightward split path room")
     restart()
@@ -521,7 +1133,7 @@ function leftchoice(){
 function takequiz(){
     let a1 = prompt("What is the national pokedex number of Clampearl?")
     let a2 = prompt("Who is the final character in the friends intro?")
-    let a3 = prompt("Who is guilty im Marcus Ceradini's Game?")
+    let a3 = prompt("Who is guilty in Marcus Ceradini's Game?")
     if (a1 == "366"){
         if (a2.toLowerCase() == "ross"){
             if (a3.toLowerCase() == "troy"){
@@ -539,6 +1151,7 @@ function takequiz(){
     else{
         die()
     }
+    event.preventDefault()
 }
 
 
@@ -571,14 +1184,14 @@ function monsterfight(){
     restart()
     b1.addEventListener('click', monsterroom)
     b2.addEventListener('click', shart)
-    b3.addEventListener('click', die)
+    b3.addEventListener('click', rightchoice)
     b4.addEventListener('click', monsterfight)
     event.preventDefault()
 }
 
 function superfight(){
     let n1 = prompt("The children are behind this door, what can you offer me?")
-    if (n1 == "peace"){
+    if (n1.toLowerCase() == "peace"){
         defeatsuperman = true
         supermanroom()
     }
@@ -587,20 +1200,61 @@ function superfight(){
     }
 }
 
+function antigardnerscene(){
+    let n4 = prompt("I to you am, Fire to Ice, Fast to Slow, Big to Small, What is the opposite to me?")
+    if (n4.toLowerCase() == "me"){
+        antireveal()
+    }
+    else if (n4.toLowerCase() == "gardner"){
+        antireveal()
+    }
+    else if (n4.toLowerCase() == "mr gardner"){
+        antireveal()
+    }
+    else if (n4.toLowerCase() == "mr gardner"){
+        antireveal()
+    }
+    else if (n4.toLowerCase() == "mr. gardner"){
+        antireveal()
+    }
+    else if (n4.toLowerCase() == "ethan gardner"){
+       antireveal() 
+    }
+    else{
+        wizardroom()
+    }
+}
+
+function antireveal(){
+    img1.src = "AntiGardner.png"
+    text1.innerHTML = '"That is right, I am the opposite of you, Mr. Gardner, I am the Anti-Gardner, all my life I wanted to be a networking teacher, so I kidnapped your students, and I am working on building a classroom where I can teach them Networking 10 times better than you every could, and I can prove it prepare for my networking exam."'
+    console.log("You have found out the kidnapper is Mr. Anti-Gardner")
+    button1.innerHTML = "Take Exam"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    restart()
+    b1.addEventListener('click', networkexam)
+    b2.addEventListener('click', antireveal)
+    b3.addEventListener('click', antireveal)
+    b4.addEventListener('click', antireveal)
+    event.preventDefault()
+}
+
 function bowtime(){
     havebow=true
     img1.src = "Ethan w_ bow.png"
     text1.innerHTML = "You got the bow"
     console.log("You have got to bow.")
     restart()
-    button1.innerHTML = "Stay"
+    button1.innerHTML = "Go Back"
     button2.innerHTML = ""
     button3.innerHTML = ""
-    button4.innerHTML = "Go Back"
-    b1.addEventListener('click', bowroom)
+    button4.innerHTML = "Stay"
+    b1.addEventListener('click', downchoice)
     b2.addEventListener('click', bowtime)
     b3.addEventListener('click', bowtime)
-    b4.addEventListener('click', downchoice)
+    b4.addEventListener('click', bowroom)
     event.preventDefault()
 
 }
@@ -616,9 +1270,26 @@ function dragonfight(){
     button4.innerHTML = ""
     restart()
     b1.addEventListener('click', dragonroom)
-    b2.addEventListener('click', shart)
+    b2.addEventListener('click', rightchoice)
     b3.addEventListener('click', variaroom)
     b4.addEventListener('click', dragonfight)
+    event.preventDefault()
+}
+
+function wizardfight(){
+    beatdragon=true
+    img1.src = "Wizard Win.png"
+    text1.innerHTML = "You killed the mysterious kidnapper"
+    console.log("You have defeated the wizard.")
+    button1.innerHTML = "Go Forward"
+    button2.innerHTML = ""
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    restart()
+    b1.addEventListener('click', ending3)
+    b2.addEventListener('click', wizardfight)
+    b3.addEventListener('click', wizardfight)
+    b4.addEventListener('click', wizardfight)
     event.preventDefault()
 }
 
@@ -639,6 +1310,62 @@ function kidtime(){
 
 }
 
+function variatime(){
+    havevaria = true
+    img1.src = "Varia Suit.png"
+    restart()
+    button1.innerHTML = "Stay"
+    button2.innerHTML = "Go Back"
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    b1.addEventListener('click', variaroom)
+    b2.addEventListener('click', dragonroom)
+    b3.addEventListener('click', variatime)
+    b4.addEventListener('click', variatime)
+    event.preventDefault()
+}
+
+function shieldtime(){
+    haveshield = true
+    img1.src = "Gardner w_ shield.png"
+    restart()
+    button1.innerHTML = "Stay"
+    button2.innerHTML = "Go Back"
+    button3.innerHTML = ""
+    button4.innerHTML = ""
+    b1.addEventListener('click', shieldroom)
+    b2.addEventListener('click', upchoice)
+    b3.addEventListener('click', shieldtime)
+    b4.addEventListener('click', shieldtime)
+    event.preventDefault()
+}
+
+function networkexam(){
+    let percent = 0;
+    let examquestions = new Map([
+        ["A Network Technitian needs a cost effective solution that can multiplex up to 16 wavelengths on an SFP/SFP+ Interface. Which multiplexing technique should the network technician use?","cwdm"],
+        ["A technician who lays cabeling is researching how the maufacturer constructed fiber optic cabling. Which of the following reflects signals back into the wavelengths as efficently as possible so that the light signal travels along the waveguide by multiple internal reflections?","cladding"],
+        ["A soultions architect is designing a cable managment solution. Which of the following is the most common wiring distribution?","patch panel"],
+        ["A network administrator is setting up connection points for multiple devices to connect. What cannot be configured?","hub"],
+        ["A project manager is ordering equipment to set up fiver cabeling in a new building. What tool should will allow him a more permanent join with lower insertion loss?","fusion splicer"]
+    ])
+
+    for (question of examquestions){
+        let n3 = prompt(question[0])
+        if(n3.toLowerCase() == question[1]){
+            percent += 20
+        }  
+    }
+
+    if (percent >= 80){
+        console.log("win")
+        ending5()
+    }
+    else{
+        console.log("lose")
+        ending4()
+    }
+}
 
 
 function start(){
@@ -656,6 +1383,9 @@ function start(){
     defeatsuperman = false
     havekid = false
     beatdragon = false
+    havevaria = false
+    haveshield = false
+    defeatbowser = false
 
     restart()
     console.log("You are in the first room")
