@@ -19,6 +19,7 @@ let havevaria = false
 let haveshield = false
 let defeatbowser = false
 let defeatganon = false
+let death = "None"
 
 function sleep(milliseconds) { //Stolen from https://stackoverflow.com/questions/16873323/javascript-sleep-wait-before-continuing
     var start = new Date().getTime();
@@ -318,7 +319,7 @@ function shart(){
 
 
 function die(){
-    text1.innerHTML = "Ending 1: Game Over, you failed to save the children"
+    text1.innerHTML = `Ending 1: Game Over, you failed to save the children, killed by: ${death}`
     img1.src = "Ethan w_ DED.png"
     button1.innerHTML = "restart"
     button2.innerHTML = "."
@@ -343,9 +344,9 @@ function ending2(){
     console.log("You are ded")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending2)
+    b3.addEventListener('click', ending2)
+    b4.addEventListener('click', ending2)
     event.preventDefault()
 }
 
@@ -359,9 +360,9 @@ function ending3(){
     console.log("You are at Ending 3")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending3)
+    b3.addEventListener('click', ending3)
+    b4.addEventListener('click', ending3)
     event.preventDefault()
 }
 
@@ -375,9 +376,9 @@ function ending4(){
     console.log("You are at Ending 4")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending4)
+    b3.addEventListener('click', ending4)
+    b4.addEventListener('click', ending4)
     event.preventDefault()
 }
 
@@ -391,9 +392,9 @@ function ending5(){
     console.log("You are at Ending 5")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending5)
+    b3.addEventListener('click', ending5)
+    b4.addEventListener('click', ending5)
     event.preventDefault()
 }
 
@@ -407,9 +408,9 @@ function ending6(){
     console.log("You are at Ending 6")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending6)
+    b3.addEventListener('click', ending6)
+    b4.addEventListener('click', ending6)
     event.preventDefault()
 }
 
@@ -423,9 +424,9 @@ function ending7(){
     console.log("You are at Ending 7")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending7)
+    b3.addEventListener('click', ending7)
+    b4.addEventListener('click', ending7)
     event.preventDefault()
 }
 
@@ -439,9 +440,9 @@ function ending8(){
     console.log("You are at Ending 8")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending8)
+    b3.addEventListener('click', ending8)
+    b4.addEventListener('click', ending8)
     event.preventDefault()
 }
 
@@ -455,9 +456,9 @@ function ending9(){
     console.log("You are at Ending 9")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending9)
+    b3.addEventListener('click', ending9)
+    b4.addEventListener('click', ending9)
     event.preventDefault()
 }
 
@@ -471,15 +472,16 @@ function ending10(){
     console.log("You are at Ending 10")
     restart()
     b1.addEventListener('click', start)
-    b2.addEventListener('click', die)
-    b3.addEventListener('click', die)
-    b4.addEventListener('click', die)
+    b2.addEventListener('click', ending10)
+    b3.addEventListener('click', ending10)
+    b4.addEventListener('click', ending10)
     event.preventDefault()
 }
 
 
 function lavaroom(){
     img1.src = "Lava Room.png"
+    death = "lava"
     text1.innerHTML = "You entered the lava room and it's really hot."
     button1.innerHTML = "Try to go through"
     button2.innerHTML = "."
@@ -608,6 +610,7 @@ function shieldroom(){
 
 function monsterroom(){
     if (defeatedmonster == false){
+        death = "monster"
         img1.src = "Monster Room.png"
         text1.innerHTML = "You encountered a powerful monster"
         button1.innerHTML = "."
@@ -649,6 +652,7 @@ function monsterroom(){
 
 function quizroom(){
     if (answeredquiz == false){
+        death = "riddler"
         img1.src = "Quiz Room.png"
         text1.innerHTML = "The Riddler has a quiz for you"
         button1.innerHTML = "Go Back"
@@ -681,6 +685,7 @@ function quizroom(){
 
 function beastroom(){
     if (defeatedbeast == false){
+        death = "monster"
         img1.src = "Beast Room.png"
         text1.innerHTML = "You encountered a powerful monster"
         button1.innerHTML = "."
@@ -754,23 +759,24 @@ function beastfight(){
 
 function ganonroom(){
     if (defeatganon == false){
+        death = "ganondorf"
         img1.src = "Ganondorf Room.png"
         text1.innerHTML = "You encountered ganondorf"
         button1.innerHTML = "Try To Fight"
-        button2.innerHTML = "Go Back"
-        button3.innerHTML = "."
+        button2.innerHTML = "."
+        button3.innerHTML = "Go Back"
         button4.innerHTML = "Try to Negoiate"
         restart()
         if (havesword == false){
             b1.addEventListener('click', die)
-            b2.addEventListener('click', leftchoice)
-            b3.addEventListener('click', ganonroom)
+            b2.addEventListener('click', ganonroom)
+            b3.addEventListener('click', leftchoice)
             b4.addEventListener('click', ganonsite) 
         }
         else{
             b1.addEventListener('click', ganonsword)
-            b2.addEventListener('click', leftchoice)
-            b3.addEventListener('click', ganonroom)
+            b2.addEventListener('click', ganonroom)
+            b3.addEventListener('click', leftchoice)
             b4.addEventListener('click', ganonsite) 
         }
     }
@@ -819,20 +825,20 @@ function ganonfly(){
     img1.src = "Ganon Room.png"
     text1.innerHTML = "Ganondorf flew up"
     button1.innerHTML = "Try To Fight"
-    button2.innerHTML = "Go Back"
-    button3.innerHTML = "."
+    button2.innerHTML = "."
+    button3.innerHTML = "Go Back"
     button4.innerHTML = "."
     restart()
     if (havebow == false){
         b1.addEventListener('click', die)
-        b2.addEventListener('click', leftchoice)
-        b3.addEventListener('click', ganonfly)
+        b2.addEventListener('click', ganonfly)
+        b3.addEventListener('click', leftchoice)
         b4.addEventListener('click', ganonfly) 
     }
     else{
         b1.addEventListener('click', ganonbow)
-        b2.addEventListener('click', leftchoice)
-        b3.addEventListener('click', ganonfly)
+        b2.addEventListener('click', ganonfly)
+        b3.addEventListener('click', leftchoice)
         b4.addEventListener('click', ganonfly) 
     }
     event.preventDefault()
@@ -857,21 +863,21 @@ function ganonblast(){
     img1.src = "Ganon Room Shoot.png"
     text1.innerHTML = "Ganondorf shot out an electric blast."
     button1.innerHTML = "Try To Block"
-    button2.innerHTML = "Go Back"
-    button3.innerHTML = "."
+    button2.innerHTML = "."
+    button3.innerHTML = "Go Back"
     button4.innerHTML = "."
     restart()
     if (haveshield == false){
         b1.addEventListener('click', die)
-        b2.addEventListener('click', leftchoice)
-        b3.addEventListener('click', ganonfly)
-        b4.addEventListener('click', ganonfly) 
+        b2.addEventListener('click', ganonblast)
+        b3.addEventListener('click', leftchoice)
+        b4.addEventListener('click', ganonblast) 
     }
     else{
         b1.addEventListener('click', ganonreflect)
-        b2.addEventListener('click', leftchoice)
-        b3.addEventListener('click', ganonfly)
-        b4.addEventListener('click', ganonfly) 
+        b2.addEventListener('click', ganonblast)
+        b3.addEventListener('click', leftchoice)
+        b4.addEventListener('click', ganonblast) 
     }
     event.preventDefault()
 }
@@ -991,6 +997,7 @@ function ganontrick(){
 
 function supermanroom(){
     if (defeatsuperman == false){
+        death = "superman"
         img1.src = "Super Room.png"
         text1.innerHTML = "You encountered superman"
         button1.innerHTML = "Go Back"
@@ -1032,8 +1039,8 @@ function kidroom(){
         console.log("You are in the kid room")
         restart()
         b1.addEventListener('click', kidtime)
-        b2.addEventListener('click', bowroom)
-        b3.addEventListener('click', bowroom)
+        b2.addEventListener('click', kidroom)
+        b3.addEventListener('click', kidroom)
         b4.addEventListener('click', supermanroom)
     }
     else{
@@ -1045,9 +1052,9 @@ function kidroom(){
         button4.innerHTML = "Go Back"
         console.log("You returned the bow room")
         restart()
-        b1.addEventListener('click', bowroom)
-        b2.addEventListener('click', bowroom)
-        b3.addEventListener('click', bowroom)
+        b1.addEventListener('click', kidroom)
+        b2.addEventListener('click', kidroom)
+        b3.addEventListener('click', kidroom)
         b4.addEventListener('click', supermanroom)
     }
     event.preventDefault()
@@ -1055,6 +1062,7 @@ function kidroom(){
 
 function dragonroom(){
     if (beatdragon == false){
+        death = "dragon"
         img1.src = "Dragon Room.png"
         text1.innerHTML = "You enocuntered THE DRAGON"
         button1.innerHTML = "."
@@ -1296,6 +1304,7 @@ function wizardroom(){
 
 function bowserroom(){
     if (defeatbowser == false){
+        death = "bowser"
         img1.src = "Bowser Room_.png"
         text1.innerHTML = "You encounted Bowser, maybe he is guarding an exit."
         console.log("You entered Bowser")
@@ -1672,13 +1681,13 @@ function shieldtime(){
     img1.src = "Gardner w_ shield.png"
     restart()
     button1.innerHTML = "Stay"
-    button2.innerHTML = "Go Back"
+    button2.innerHTML = "."
     button3.innerHTML = "."
-    button4.innerHTML = "."
+    button4.innerHTML = "Go Back"
     b1.addEventListener('click', shieldroom)
-    b2.addEventListener('click', upchoice)
+    b2.addEventListener('click', shieldtime)
     b3.addEventListener('click', shieldtime)
-    b4.addEventListener('click', shieldtime)
+    b4.addEventListener('click', upchoice)
     event.preventDefault()
 }
 
